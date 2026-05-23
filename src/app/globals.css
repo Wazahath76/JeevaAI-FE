@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Sora', sans-serif;
+  background-color: #0A0F1E;
+  color: #F1F5F9;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #0F1629; }
+::-webkit-scrollbar-thumb { background: #1E2A3E; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2A3A54; }
+
+@layer components {
+  .card          { @apply bg-navy-700 border border-navy-500 rounded-xl; }
+  .btn-primary   { @apply inline-flex items-center gap-2 bg-teal-500 text-navy-900 font-semibold px-4 py-2 rounded-lg hover:bg-teal-400 active:scale-95 transition-all duration-150 text-sm cursor-pointer; }
+  .btn-secondary { @apply inline-flex items-center gap-2 bg-transparent border border-navy-500 text-slate-200 px-4 py-2 rounded-lg hover:bg-navy-600 active:scale-95 transition-all duration-150 text-sm cursor-pointer; }
+  .btn-danger    { @apply inline-flex items-center gap-2 bg-red-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-red-600 active:scale-95 transition-all duration-150 text-sm cursor-pointer; }
+  .input-field   { @apply bg-navy-800 border border-navy-500 text-slate-200 rounded-lg px-3 py-2.5 text-sm w-full focus:outline-none focus:border-teal-500 transition-colors placeholder-slate-600; }
+  .input-error   { @apply border-red-500/60 focus:border-red-500; }
+  .label         { @apply text-slate-400 text-xs font-medium uppercase tracking-wide mb-1 block; }
+  .mono          { font-family: 'JetBrains Mono', monospace; }
+}

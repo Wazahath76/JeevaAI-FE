@@ -1,0 +1,21 @@
+import api from './api'
+export const patientService = {
+  getAll:       p  => api.get('/patients', { params: p }),
+  getMy:        p  => api.get('/patients/my', { params: p }),
+  getById:      id => api.get(`/patients/${id}`),
+  create:       d  => api.post('/patients', d),
+  update:       (id,d) => api.put(`/patients/${id}`, d),
+  addVital:     (id,d) => api.post(`/patients/${id}/vitals`, d),
+  getVitals:    id => api.get(`/patients/${id}/vitals`),
+  addDiagnosis: (id,d) => api.post(`/patients/${id}/diagnoses`, d),
+  getDiagnoses: id => api.get(`/patients/${id}/diagnoses`),
+  addTreatment: (id,d) => api.post(`/patients/${id}/treatments`, d),
+  getTreatments: id => api.get(`/patients/${id}/treatments`),
+  stopTreatment: (pid,tid) => api.patch(`/patients/${pid}/treatments/${tid}/stop`),
+  addNote:      (id,d) => api.post(`/patients/${id}/notes`, d),
+  getNotes:     id => api.get(`/patients/${id}/notes`),
+  addLabResult: (id,d) => api.post(`/patients/${id}/lab-results`, d),
+  getLabResults: id => api.get(`/patients/${id}/lab-results`),
+  createDischarge: (id,d) => api.post(`/patients/${id}/discharge`, d),
+  getDischarge: id => api.get(`/patients/${id}/discharge`),
+}
