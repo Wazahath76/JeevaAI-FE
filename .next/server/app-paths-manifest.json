@@ -1,8 +1,0 @@
-{
-  "/main/dashboard/page": "app/main/dashboard/page.js",
-  "/main/assignments/page": "app/main/assignments/page.js",
-  "/main/analytics/page": "app/main/analytics/page.js",
-  "/main/patients/page": "app/main/patients/page.js",
-  "/main/patients/new/page": "app/main/patients/new/page.js",
-  "/main/patients/[id]/page": "app/main/patients/[id]/page.js"
-}
