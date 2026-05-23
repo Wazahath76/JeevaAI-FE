@@ -139,7 +139,7 @@ export default function PatientEMRPage() {
   )
 
   const latestVital = vitals[0]
-  const vitalsAlerts = getVitalsAlerts(latestVital||{})
+  const vitalsAlerts = latestVital ? getVitalsAlerts(latestVital) : []
   const abnormalLabs = labs.filter(l=>l.isAbnormal).length
   const chartData = [...vitals].reverse().slice(-20).map(v=>({ t:formatDate(v.recordedAt,'dd/MM HH:mm'), BP:v.bloodPressureSystolic, Pulse:v.pulseBpm, SpO2:v.spo2Percent }))
 

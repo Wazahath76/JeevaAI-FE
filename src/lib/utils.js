@@ -78,9 +78,9 @@ export function checkPassword(pwd) {
 export function getVitalsAlerts(vital) {
   if (!vital) return []
   const alerts = []
-  if (vital.bloodPressureSystolic > 140)  alerts.push('High BP')
-  if (vital.spo2Percent < 95)             alerts.push('Low SpO₂')
-  if (vital.pulseBpm > 120)               alerts.push('High Pulse')
-  if (vital.temperatureCelsius > 38.5)    alerts.push('Fever')
+  if (vital.bloodPressureSystolic && vital.bloodPressureSystolic > 140) alerts.push('High BP')
+  if (vital.spo2Percent && vital.spo2Percent < 95)                       alerts.push('Low SpO₂')
+  if (vital.pulseBpm && vital.pulseBpm > 120)                            alerts.push('High Pulse')
+  if (vital.temperatureCelsius && vital.temperatureCelsius > 38.5)       alerts.push('Fever')
   return alerts
 }
